@@ -30,4 +30,7 @@ The footer identifies ALIN as a website demo with illustrative people and rooms.
 - Scanned exported HTML, JavaScript, RSC payloads and text assets: no removed image-generation labels or “Room to breathe” / “Durchatmen” wording remained.
 - A neutral demo disclosure remains in the footer and legal page. Appointment availability and missing practice details are still described accurately.
 
-This local build validates the exported website; the Vercel deployment result must be checked for the commit containing these changes.
+- Browser review of the updated source passed at 390px German and 320px English iframe widths: no horizontal document overflow. The English appointment notice opened and closed with Escape; the gallery displayed the new title and image counter and advanced correctly.
+- Vercel reported a successful preview deployment for source commit `a6739a9b9eed03a98af8298d6011f2d768658826`. Its preview requires Vercel login, so deployed-page visual inspection was unavailable in the review browser. The mobile browser checks used the local preview.
+
+The production branch is updated only when the pull request is merged; check the resulting production deployment separately.
