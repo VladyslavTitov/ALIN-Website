@@ -5,10 +5,25 @@ import {Dialog,DialogTrigger,DialogContent,DialogTitle,DialogDescription,DialogC
 import {Sheet,SheetTrigger,SheetContent,SheetTitle,SheetDescription,SheetClose} from '@/components/ui/sheet';
 import {Accordion,AccordionItem,AccordionTrigger,AccordionContent} from '@/components/ui/accordion';
 import {practice,ui,faq,Lang,PageKey,pathFor} from '@/lib/practice';
+import {DemoBooking} from './demo-booking';
 
 export function BookingButton({lang,className='',short=false}:{lang:Lang;className?:string;short?:boolean}){
  const t=ui[lang];
- return <Dialog><DialogTrigger asChild><button className={`btn ${className}`} aria-label={short?t.bookShort:t.appointment}><CalendarDays aria-hidden="true"/><span className="booking-label">{short?t.bookShort:t.appointment}</span><span className="booking-short" aria-hidden="true">{t.bookShort}</span></button></DialogTrigger><DialogContent className="booking-dialog" showCloseButton={false}><DialogClose className="dialog-close" aria-label={t.close}><X/></DialogClose><div className="booking-icon"><CalendarDays/></div><DialogTitle>{t.bookingTitle}</DialogTitle><DialogDescription>{t.bookingDescription}</DialogDescription>{practice.bookingUrl||practice.phone?<div className="booking-links">{practice.bookingUrl&&<><a className="btn" href={practice.bookingUrl} target="_blank" rel="noopener noreferrer">{t.bookingOnline}<ArrowRight/></a><p className="small-note">{t.bookingExternal}</p></>}{practice.phone&&<a className="btn secondary" href={`tel:${practice.phone.replace(/[^+0-9]/g,'')}`}><Phone/>{practice.phone}</a>}</div>:<div className="info-box"><strong>{t.bookingUnavailable}</strong><p>{t.bookingDemo}</p></div>}<a href={pathFor(lang,'contact')} className="text-link">{t.bookingContact}<ArrowRight/></a></DialogContent></Dialog>;
+ const demo=practice.bookingMode==='demo';
+ return <Dialog>
+  <DialogTrigger asChild><button className={`btn ${className}`} aria-label={short?t.bookShort:t.appointment}><CalendarDays aria-hidden="true"/><span className="booking-label">{short?t.bookShort:t.appointment}</span><span className="booking-short" aria-hidden="true">{t.bookShort}</span></button></DialogTrigger>
+  <DialogContent className={demo?'demo-booking-dialog':'booking-dialog'} showCloseButton={false}>
+   <DialogClose className="dialog-close" aria-label={t.close}><X/></DialogClose>
+   {demo?<DemoBooking lang={lang}/>:<>
+    <div className="booking-icon"><CalendarDays/></div><DialogTitle>{t.bookingTitle}</DialogTitle><DialogDescription>{t.bookingDescription}</DialogDescription>
+    {practice.bookingUrl||practice.phone?<div className="booking-links">
+     {practice.bookingUrl&&<><a className="btn" href={practice.bookingUrl} target="_blank" rel="noopener noreferrer">{t.bookingOnline}<ArrowRight/></a><p className="small-note">{t.bookingExternal}</p></>}
+     {practice.phone&&<a className="btn secondary" href={`tel:${practice.phone.replace(/[^+0-9]/g,'')}`}><Phone/>{practice.phone}</a>}
+    </div>:<div className="info-box"><strong>{t.bookingUnavailable}</strong><p>{t.bookingDemo}</p></div>}
+    <a href={pathFor(lang,'contact')} className="text-link">{t.bookingContact}<ArrowRight/></a>
+   </>}
+  </DialogContent>
+ </Dialog>;
 }
 export function LanguageSwitch({lang,alternate}:{lang:Lang;alternate:string}){return <div className="language" aria-label={lang==='de'?'Sprache wählen':'Choose language'}><a href={lang==='de'?'#':alternate} lang="de" hrefLang="de" aria-current={lang==='de'?'page':undefined} aria-label="Deutsch">DE</a><span aria-hidden="true">/</span><a href={lang==='en'?'#':alternate} lang="en" hrefLang="en" aria-current={lang==='en'?'page':undefined} aria-label="English">EN</a></div>}
 export function MobileMenu({lang,alternate}:{lang:Lang;alternate:string}){const t=ui[lang];const pages:PageKey[]=['services','team','patients','contact'];return <Sheet><SheetTrigger asChild><button className="mobile-toggle" aria-label={t.menu}><Menu/></button></SheetTrigger><SheetContent className="mobile-menu" showCloseButton={false}><SheetClose className="dialog-close" aria-label={t.close}><X/></SheetClose><SheetTitle>ALIN</SheetTitle><SheetDescription>{t.footerTag}</SheetDescription><nav aria-label={t.menu}>{pages.map((p,i)=><a key={p} href={pathFor(lang,p)}>{t.nav[i]}</a>)}<a href={pathFor(lang,'first')}>{t.firstLabel}</a></nav><LanguageSwitch lang={lang} alternate={alternate}/><BookingButton lang={lang}/></SheetContent></Sheet>}

@@ -10,7 +10,7 @@ A polished, mobile-first dental-practice demo built for TiLADYS. **ALIN is ficti
 - Original AI logo and four photographs; WebP variants, explicit image dimensions and priority hero loading.
 - Radix/Shadcn dialog, sheet and accordion primitives, Lucide icons.
 - German default, translated URLs, page-preserving language links, correct server-rendered `lang`.
-- Responsive menu, non-overlapping mobile action bar, keyboard-accessible booking notice and gallery, reduced-motion styles, printable first-visit checklist.
+- Responsive menu, non-overlapping mobile action bar, bilingual demo appointment flow, keyboard-accessible gallery, reduced-motion styles, printable first-visit checklist.
 - No contact form, analytics scripts, database, automatic map embeds or booking-provider scripts.
 
 ## Run and build
@@ -59,9 +59,11 @@ Configuration reference: [Vercel static configuration](https://vercel.com/docs/p
 
 ## Appointment integration
 
-Set `practice.bookingUrl` to the practice-owned, approved HTTPS booking destination. The booking dialog then displays that outgoing link and identifies the change of provider. Set `practice.phone` to enable the telephone route and mobile call button. No credentials should be placed in client-side configuration. Current empty values show a truthful unavailable state and never simulate success.
+The default `practice.bookingMode: 'demo'` opens a three-step appointment demonstration with sample visit types, a date picker, example times, fixed sample contact details and an explicit result stating that no appointment was booked. It sends no booking requests and stores nothing; closing the dialog resets it.
 
-A live booking service remains responsible for slot availability, identity verification, confirmation, cancellation and reminders. No backend is implemented in this prototype because no provider or real practice was supplied.
+For real appointments, set `practice.bookingMode` to `'live'`, then set `practice.bookingUrl` to the practice-owned, approved HTTPS booking destination and `practice.phone` to the verified practice number. The dialog then displays those contact routes and identifies the change of provider. Empty live settings show an unavailable notice. No credentials should be placed in client-side configuration.
+
+The provider handles actual availability, reservation, confirmation, cancellation and reminders. See [BOOKING-GUIDE.md](BOOKING-GUIDE.md) for implementation steps, staff versus patient dashboards, current free options and the limits of this demo. The static website has no booking backend.
 
 ## Before a real practice launch
 

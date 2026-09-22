@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import '../vendor/shadcn-tailwind-4.13.0.css';
+@import '../components/site/demo-booking.css';
 @font-face{font-family:Manrope;src:url('/fonts/manrope.woff') format('woff');font-weight:200 800;font-display:swap}
 @font-face{font-family:'Source Sans 3';src:url('/fonts/source-sans-3.woff') format('woff');font-weight:200 900;font-display:swap}
 :root{--background:#f7f8f5;--foreground:#243331;--card:#fff;--card-foreground:#243331;--popover:#fff;--popover-foreground:#243331;--primary:#18564d;--primary-foreground:#fff;--secondary:#e5efeb;--secondary-foreground:#18564d;--muted:#e5efeb;--muted-foreground:#50645f;--accent:#d6b58a;--accent-foreground:#243331;--destructive:#a33131;--border:#d6dfd8;--input:#d6dfd8;--ring:#18564d;--radius:1rem;--sage:#e5efeb;--ink:#243331;--teal:#18564d;--sand:#d6b58a;--muted-text:#60716c;--font-body:'Source Sans 3',sans-serif;--font-heading:Manrope,sans-serif;color-scheme:light}
