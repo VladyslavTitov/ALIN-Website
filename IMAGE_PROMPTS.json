@@ -1,0 +1,32 @@
+[
+  {
+    "name": "alin-consultation-hero",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original hero photograph for fictional German dental practice ALIN, clearly fictional concept imagery.\nPrimary request: A warm natural candid consultation between a friendly female dentist about age 35 with chestnut shoulder-length hair wearing deep teal scrubs and a relaxed adult female patient wearing neutral linen. They talk at eye level with warm, unforced expressions.\nScene/backdrop: bright contemporary dental room with oak, pale sage and warm white details, soft daylight through a window.\nStyle/medium: photorealistic premium editorial photography, natural skin texture, believable anatomy and human expressions.\nComposition/framing: landscape 3:2, both women clearly visible, intimate conversational medium-wide view.\nLighting/mood: soft natural daylight, calm and approachable.\nConstraints: no dental procedures taking place, no visible tools in mouths, no text, no signage, no logo, no watermark. Fictional people, no real doctor identity. Generate one image.",
+    "source": "/workspace/scratch/3bc83ff3736b/generated_images/exec-511310ef-70de-47ca-82de-b276a9bfa8c0.png",
+    "path": "/workspace/scratch/3bc83ff3736b/dental-assets/alin-consultation-hero.png"
+  },
+  {
+    "name": "alin-dentist-portrait",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original portrait photograph for fictional German dental practice ALIN, clearly fictional concept imagery.\nPrimary request: Portrait of a friendly fictional female dentist about age 35, chestnut shoulder-length hair, deep teal scrubs, approachable warm natural smile, looking toward camera.\nScene/backdrop: bright contemporary practice with warm oak and warm white surfaces, softly blurred background.\nStyle/medium: photorealistic premium editorial portrait, natural skin texture, realistic facial proportions.\nComposition/framing: portrait 4:5, full head including hair with comfortable headroom and upper torso visible.\nLighting/mood: soft daylight, relaxed and professional.\nConstraints: no text, no signage, no logo, no watermark; no real doctor identity. Generate one image.",
+    "source": "/workspace/scratch/3bc83ff3736b/generated_images/exec-c14ca4ad-c5ad-45b0-8294-fbffcc9dc3f4.png",
+    "path": "/workspace/scratch/3bc83ff3736b/dental-assets/alin-dentist-portrait.png"
+  },
+  {
+    "name": "alin-reception-interior",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original architectural interior photograph for fictional German dental practice ALIN.\nPrimary request: A premium but approachable contemporary German dental reception, featuring a curved oak reception desk, pale sage upholstered seating, warm white plaster walls, large daylight windows, a sculptural green plant and subtle ribbed glass.\nStyle/medium: photorealistic architectural editorial photography, refined natural materials with realistic texture, clean and welcoming.\nComposition/framing: wide landscape 3:2, an inviting spatial view of the reception desk and waiting area, straight believable architectural lines.\nLighting/mood: soft abundant natural daylight and calm warm atmosphere.\nConstraints: no people, no text, no signage, no logo, no watermark. Generate one image.",
+    "source": "/workspace/scratch/3bc83ff3736b/generated_images/exec-395b6263-e4b6-47c7-85d4-ccb8bc820d6f.png",
+    "path": "/workspace/scratch/3bc83ff3736b/dental-assets/alin-reception-interior.png"
+  },
+  {
+    "name": "alin-symbol",
+    "prompt": "Use case: logo-brand\nAsset type: original minimal professional logo SYMBOL only for fictional dental brand ALIN.\nPrimary request: One refined monoline rounded abstract tooth shape intertwined with a leaf-like curve. Elegant, restrained, immediately readable as a single unified symbol.\nStyle/medium: flat crisp clean vector-like raster, consistent refined line weight and smooth rounded curves.\nComposition/framing: centered square composition, one symbol only, ample margins.\nColor palette: deep teal #18564D symbol on uniform warm white #F7F8F5 background.\nConstraints: no typography, no letters, no wordmark, no extra symbols, no shadows, no gradient, no texture, no mockup, no watermark. Generate one image.",
+    "source": "/workspace/scratch/3bc83ff3736b/generated_images/exec-f4382a80-e99b-45c8-af89-e8de7d1a10ef.png",
+    "path": "/workspace/scratch/3bc83ff3736b/dental-assets/alin-symbol.png"
+  },
+  {
+    "name": "alin-treatment-room",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original landscape gallery photograph for fictional German dental practice ALIN, clearly fictional concept imagery.\nPrimary request: A bright modern dental treatment room with a pale sage dental chair, clean white dental equipment, warm oak cabinetry and a large frosted daylight window.\nStyle/medium: elegant calm photorealistic architectural editorial photography, believable real-looking equipment, natural surfaces and straight architectural lines.\nComposition/framing: 3:2 landscape, inviting medium-wide room view with the dental chair and daylight window clearly visible.\nLighting/mood: soft abundant natural daylight, quiet welcoming atmosphere.\nConstraints: no people, no procedures, no text, no signage, no logo, no watermark. Generate one image.",
+    "source": "/workspace/scratch/3bc83ff3736b/generated_images/exec-a8d03e47-91da-44f9-bc9e-44b15839d1de.png",
+    "path": "/workspace/scratch/3bc83ff3736b/dental-assets/alin-treatment-room.png"
+  }
+]

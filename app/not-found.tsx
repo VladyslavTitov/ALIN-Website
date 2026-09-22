@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="not-found"><h1>Diese Seite gibt es nicht.</h1><p>This page could not be found.</p><a className="btn" href="/de/">Zur Startseite · Home</a></main>}
