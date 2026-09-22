@@ -18,4 +18,16 @@ Completed for the private concept on 22 September 2026:
 
 Not claimed: a WCAG certification, formal screen-reader audit, measured Core Web Vitals, real booking success, email delivery, verified practice information, clinically approved copy or completed legal advice. No real booking provider, phone number or practice address was supplied.
 
-AI concept photographs, legal drafts and missing practice data remain visibly identified. The preview is private and noindex. See LAUNCH-CHECKLIST.md before a real practice launch.
+The footer identifies ALIN as a website demo with illustrative people and rooms. Legal drafts and missing practice data remain identified. The demo remains noindex. See LAUNCH-CHECKLIST.md before a real practice launch.
+
+## Vercel configuration and copy update — 22 September 2026
+
+- Reproduced the portable Vinext production build with Node 24.19.0: all 34 routes exported, zero skipped.
+- TypeScript check passed; the existing static verifier passed for all 32 localized content pages, their document languages, headings, titles, internal links and assets.
+- `vercel.json` now explicitly selects the Other framework preset (`framework: null`), builds with `pnpm run build`, serves `dist/client` and enables clean URLs. The previous Next.js preset expected a `.next/routes-manifest.json` file that Vinext does not produce.
+- Pinned Node to 24.x rather than allowing automatic upgrades to future major versions.
+- Reworked German and English homepage, team, contact and gallery wording. Removed image-generation notices from visible text, image alternatives, metadata and client-delivered translation data. Gallery image alternatives remain descriptive, and the lightbox keeps an accessible image counter.
+- Scanned exported HTML, JavaScript, RSC payloads and text assets: no removed image-generation labels or “Room to breathe” / “Durchatmen” wording remained.
+- A neutral demo disclosure remains in the footer and legal page. Appointment availability and missing practice details are still described accurately.
+
+This local build validates the exported website; the Vercel deployment result must be checked for the commit containing these changes.

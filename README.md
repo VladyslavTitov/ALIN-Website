@@ -1,6 +1,6 @@
 # ALIN — German / English dental website
 
-A polished, mobile-first dental-practice concept built for TiLADYS. **ALIN is fictional.** The generated photographs do not depict real staff, patients, facilities or results. The private preview is intentionally not indexed and does not accept patient data or appointments.
+A polished, mobile-first dental-practice demo built for TiLADYS. **ALIN is fictional.** The generated photographs do not depict real staff, patients, facilities or results. The demo is intentionally not indexed and does not accept patient data or appointments. A brief footer disclosure identifies the illustrative people and rooms; repeated image-generation labels are omitted from the website.
 
 ## Project
 
@@ -15,7 +15,7 @@ A polished, mobile-first dental-practice concept built for TiLADYS. **ALIN is fi
 
 ## Run and build
 
-Requires Node >=22.13 and the exact pnpm version declared in package.json.
+Requires Node 24.x and the exact pnpm version declared in package.json.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -26,6 +26,25 @@ pnpm build
 Build output is `dist/client`. Its HTML, CSS, JavaScript, fonts and images can be hosted on a static host supporting clean `.html` URLs. Do not deploy `dist/server` for the static version. The Git repository and lockfile are the reproducible source of truth.
 
 The managed Sites environment uses the installed Sites setup/build/hosting scripts and `sites-preview start` for QA. In other environments, the execution-profile helper selects the portable workflow.
+
+## Deploy to Vercel
+
+The repository includes `vercel.json` so Vercel uses the **Other** framework preset, runs `pnpm run build`, and serves `dist/client`. Clean URLs are enabled for German and English pages, including nested treatment pages. Node is pinned to 24.x in `package.json`.
+
+Keep the Vercel Root Directory at the repository root. Deploy a commit containing this configuration. If checking the dashboard manually, the matching settings are:
+
+| Setting | Value |
+| --- | --- |
+| Framework Preset | Other |
+| Build Command | `pnpm run build` |
+| Output Directory | `dist/client` |
+| Node.js Version | 24.x |
+
+The Next.js preset is incompatible with this project's Vinext build: it looks for `.next/routes-manifest.json`, while this project exports static HTML into `dist/client`. Changing the output folder to `.next` does not fix that mismatch. Do not add a catch-all rewrite to `index.html`; each page already has its own exported HTML.
+
+After deployment, open `/de`, `/en`, `/de/leistungen/zahnreinigung` and `/en/treatments/professional-cleaning` directly, then check the language switch, gallery and appointment notice. Unknown paths should return the exported 404 page.
+
+Configuration reference: [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json).
 
 ## Edit content
 
@@ -57,4 +76,3 @@ Assign a practice owner for contact data, hours, holiday notices and appointment
 ## Verification
 
 See `VERIFICATION.md` for checks actually completed and their limits. No performance score or legal compliance certification is claimed.
-# ALIN-Website
