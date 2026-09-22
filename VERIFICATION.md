@@ -34,3 +34,17 @@ The footer identifies ALIN as a website demo with illustrative people and rooms.
 - Vercel reported a successful preview deployment for source commit `a6739a9b9eed03a98af8298d6011f2d768658826`. Its preview requires Vercel login, so deployed-page visual inspection was unavailable in the review browser. The mobile browser checks used the local preview.
 
 The production branch is updated only when the pull request is merged; check the resulting production deployment separately.
+
+
+## Appointment demo — 22 September 2026
+
+- Added a German/English appointment demo using sample services, a calendar, sample times, fixed example contact details and a result that explicitly says no appointment was booked.
+- Completed the German flow on desktop and the English flow in a 320px iframe. Reviewed the German mobile flow at 390px. Corrected narrow-screen calendar overflow and badge/close-button spacing.
+- Checked that the primary action stays disabled until required choices are made, changing the date clears the previous time, going back preserves valid choices, restarting clears choices, and closing/reopening resets the service selection. Escape dismissal works.
+- Checked a short 390px-high viewport: the dialog scrolls as a whole and its service controls and next action remain reachable.
+- Five date/selection unit tests pass, including German date boundaries, daylight-saving changes, invalid dates, unavailable times and stale selections. The same tests also pass with the process timezone set to America/Los_Angeles.
+- No real personal-data inputs, booking requests, browser storage, appointment emails or database writes were added. The demo does not reserve a slot.
+- Added a separate live-link configuration and a guide for integrating an approved provider, choosing free/paid options and using the provider's staff dashboard.
+- TypeScript and the final production static build passed. All 34 routes exported, and `scripts/verify-static.mjs` passed for the 32 localized content pages and their internal links/assets. Temporary QA pages were removed before building.
+
+These checks are not a formal accessibility audit or a test of a real appointment integration. The practice/provider setup and production content review remain necessary before enabling real booking.
